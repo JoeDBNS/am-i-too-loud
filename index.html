@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Am I Too Loud?</title>
+
+<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.ico"/>
+
+<!-- Bootstrap - Grid -->
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap-grid.min.css">
+
+<!-- CSS File -->
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+</head>
+
+<body>
+	<div id="app-container" class="container" role="main">
+		<div class="row justify-content-center mt-5">
+			<div class="col-12 mb-5 text-center">
+				<span v-cloak>{{(mic_volume * mic_sensitivity) / 2}}</span> %
+			</div>
+
+			<div id="version-1" class="col-6">
+				<div class="meter">
+					<div v-cloak class="meter-fill" v-bind:style="{ height: (mic_volume * mic_sensitivity) + 'px' }"></div>
+				</div>
+			</div>
+
+			<div id="version-2" class="col-6">
+				<div class="meter">
+					<div v-cloak class="meter-fill" v-bind:style="{ height: (200 - (mic_volume * mic_sensitivity)) + 'px' }"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row justify-content-center mt-5">
+			<label for="mic-sensitivity">Microphone Sensitivity</label>
+			<select name="mic-sensitivity" id="mic-sensitivity" v-model="mic_sensitivity">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+		</div>
+	</div>
+
+
+<!-- Vue.js -->
+	<script type="text/javascript" src="./js/vue.min.js"></script>
+
+<!-- JS File -->
+	<script type="text/javascript" src="./js/index.js"></script>
+</body>
+
+</html>

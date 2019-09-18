@@ -1,0 +1,98 @@
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+body {
+	background-color: whitesmoke;
+	margin: 0;
+	font-family: monospace;
+}
+
+/* Text Aligns */
+	.text-center {
+		text-align: center;
+	}
+	.text-left {
+		text-align: left;
+	}
+	.text-right {
+		text-align: right;
+	}
+    @media handheld, only screen and (max-width: 767px) {
+        .mobile-text-center {
+            text-align: left;
+        }
+        .mobile-text-left {
+            text-align: center;
+        }
+        .mobile-text-right {
+            text-align: right;
+        }
+	}
+
+/* Transitions */
+	.transition {
+		-webkit-transition: .25s;
+		-moz-transition: .25s;
+		-o-transition: .25s;
+		transition: .25s;
+	}
+
+/* Vue.js */
+	[v-cloak] {
+		display: none;
+	}
+
+/* Meter */
+	#version-1 .meter {
+		position: relative;
+		height: 200px;
+		width: 40px;
+		margin: auto;
+		background-color: white;
+		border: 1px solid slategray;
+		border-radius: 10px;
+		overflow: hidden;
+		user-select: none;
+	}
+	#version-1 .meter-fill {
+		position: absolute;
+		bottom: 0;
+		height: 0px;
+		width: 40px;
+		background-color: red;
+	}
+
+	#version-2 .meter {
+		position: relative;
+		height: 200px;
+		width: 40px;
+		margin: auto;
+		border: 1px solid slategray;
+		border-radius: 10px;
+		overflow: hidden;
+		user-select: none;
+
+		/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ff0000+0,ffa500+38,ffa500+49,00ff00+100 */
+		background: #ff0000; /* Old browsers */
+		background: -moz-linear-gradient(top, #ff0000 0%, #ffa500 38%, #ffa500 49%, #00ff00 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, #ff0000 0%, #ffa500 38%, #ffa500 49%, #00ff00 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, #ff0000 0%, #ffa500 38%, #ffa500 49%, #00ff00 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#00ff00', GradientType=0 ); /* IE6-9 */
+	}
+	#version-2 .meter-fill {
+		position: relative;
+		height: 200px;
+		width: 40px;
+		background-color: white;
+	}
